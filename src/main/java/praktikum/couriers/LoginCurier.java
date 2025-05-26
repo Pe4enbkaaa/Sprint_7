@@ -1,7 +1,5 @@
 package praktikum.couriers;
 
-import java.util.Random;
-
 public class LoginCurier {
     private final String login;
     private final String password;

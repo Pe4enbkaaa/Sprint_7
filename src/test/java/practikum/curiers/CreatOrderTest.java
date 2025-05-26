@@ -1,6 +1,7 @@
 package practikum.curiers;
 
 import io.restassured.response.ValidatableResponse;
+import jdk.jfr.Description;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -13,11 +14,11 @@ import java.util.Collection;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class CreatOrder {
+public class CreatOrderTest {
     CourierClient courierClient = new CourierClient();
     CouriersChecks couriersChecks = new CouriersChecks();
     private final List<String> colors;
-    public CreatOrder(List<String> colors) {
+    public CreatOrderTest(List<String> colors) {
         this.colors = colors;
     }
     @Parameterized.Parameters
@@ -30,6 +31,7 @@ public class CreatOrder {
         });
     }
 @Test
+@Description("Успешно создается заказ с разными цветами")
     public void creatOrder(){
     var order = CreateOrder.order(colors);
     ValidatableResponse createRespons = courierClient.creatOrder(order);

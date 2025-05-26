@@ -5,9 +5,10 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
+
 import static org.junit.Assert.*;
 
-public class checkOrder {
+public class checkOrderTest {
     @Test
     public void whenGetOrders_thenReturnsValidOrderStructure() {
         Response response = RestAssured
